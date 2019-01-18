@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Неоновые маски</title>
 	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="stylesheet" href="css/icons.css">
 </head>
 <body>
 	<button class="burger"><span></span></button>
 	<header>
 		<div class="header-content">
-			<div class="contacts">
+			<div class="contacts-menu">
 				<a href="tel:+380998885511">0998885511</a>
 			</div>
 			<nav>
@@ -31,10 +31,10 @@
 			<div class="advantages-text">
 				<h2>Преимущества неоновой маски:</h2>
 				<ul class="advantages-list">
-					<li>5 расцветок ( Красный, желтый, синий, зеленый, фиолетовый )</li>
-					<li>Питание от 2-х батареек АА</li>
-					<li>Маска НЕ греется</li>
-					<li>Свет не мерцает</li>
+					<li class="icon-art-gallery">5 расцветок ( Красный, желтый, синий, зеленый, фиолетовый )</li>
+					<li class="icon-battery">Питание от 2-х батареек АА</li>
+					<li class="icon-thermometer-0">Маска НЕ греется</li>
+					<li class="icon-light-up">Свет не мерцает</li>
 				</ul>
 			</div>
 			<div class="advantages-lightboxes">
@@ -46,9 +46,61 @@
 	<div class="line"></div>
 	<section class="catalog">
 		<h2>Каталог</h2>
+		<div class="catalog-items">
+			<div class="item">
+				<img src="images/1.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" blue</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+			<div class="item">
+				<img src="images/2.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" red</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+			<div class="item">
+				<img src="images/3.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" brown</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+			<div class="item">
+				<img src="images/11.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" pink</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+			<div class="item">
+				<img src="images/6.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" yellow</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+			<div class="item">
+				<img src="images/10.jpg" alt="mask">
+				<h3 class="caption">Маска "Судная ночь" white</h3>
+				<span class="icon-cart-arrow-down">1000 грн</span>
+			</div>
+		</div>
 	</section>
 	<section class="contacts">
-		<h2>Контакты</h2>
+		<div class="container">
+			<h2>Контакты</h2>
+			<div class="contacts-block">
+				<form method="post">
+					<input type="text" name="fname" placeholder="Имя">
+					<input type="text" name="phone" placeholder="Телефон">
+					<button id="callback" class="btn">Заказать звонок</button>
+				</form>
+				<div class="contacts-block-text">
+					<h3>Свяжитесь с нами</h3>
+					<p>Телефон: <a href="tel:0679991122">+380679991122</a></p>
+					<p>Оставьте заявку и наш менеджер свяжется с вами для уточнения подробностей.</p>
+					<div class="socials">
+						<a href="#" class="icon-vk"></a>
+						<a href="#" class="icon-telegram"></a>
+						<a href="#" class="icon-instagram-1"></a>
+						<a href="#" class="icon-youtube-play"></a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<footer>
 		© 2019 | Все права защищены
@@ -61,6 +113,7 @@
 		</div>
 	</div>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script src="scripts/jquery.mask.min.js"></script>
 	<script src="scripts/script.js"></script>
 </body>
 </html>

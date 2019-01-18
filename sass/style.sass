@@ -16,7 +16,6 @@ body
 
 *
 	box-sizing: border-box
-	transition: 0.4s
 	margin: 0
 	padding: 0
 
@@ -25,9 +24,14 @@ ul
 a 
 	text-decoration: none
 	display: inline-block
+	color: $white
+
 
 img 
 	width: 100%
+
+p
+	color: $white
 
 h1, h2
 	color: $white
@@ -38,6 +42,7 @@ h1
 h2
 	font-size: 21px
 	text-align: center
+	text-shadow: 0px 0px 15px $active
 
 @media screen and (min-width: 960px)
 	h1
@@ -59,7 +64,7 @@ h2
 	padding: 2px
 	width: 50px
 	height: 50px
-	background-color: transparent
+	background-color: $dark
 	border: 3px solid $white
 	border-radius: 3px
 	z-index: 10
@@ -124,7 +129,7 @@ header
 			text-transform: uppercase
 			color: $white
 			padding: 5px
-		.contacts
+		.contacts-menu
 			a
 				font-size: 20px 
 		nav 
@@ -177,25 +182,20 @@ section.info
 		padding-top: 40px
 		&-text
 			text-align: center
-			h2
-				text-shadow: 0px 0px 15px $active
 		&-list
 			color: $white
 			text-align: left
 			margin: 20px 0
 			li 
-				padding: 5px 0 3px 40px
+				padding: 5px 0 3px 50px
 				position: relative
 				&:before 
-					content: ''
 					display: block
-					width: 20px
-					height: 20px
+					font-size: 25px
 					position: absolute
 					top: 50%
 					left: 5px
 					transform: translateY(-50%)
-					background-color: red
 		&-lightboxes
 			min-height: 300px
 			.lightbox
@@ -213,7 +213,7 @@ section.info
 @media screen and (min-width: 960px)
 	section.info
 		.advantages
-			&-text
+			// &-text
 			&-list
 				display: flex
 				flex-wrap: wrap
@@ -283,7 +283,7 @@ section.info
 //SECTION INFO END
 
 //SECTION CATALOG
-section.catalog
+.catalog
 	min-height: 100vh
 	position: relative
 	&::before
@@ -291,10 +291,80 @@ section.catalog
 		display: block
 		border-top: 1.5px solid $white
 		box-shadow: 0 0px 2px 3px $active
+	h2
+		padding: 40px 0
+	&-items
+		.item
+			width: 100%
+			position: relative
+			padding: 0
+			text-align: right
+			margin-bottom: 5px
+			overflow: hidden
+			cursor: pointer
+			&:before 
+				content: ''
+				display: block
+				padding-top: 100%
+			img 
+				position: absolute
+				top: 0
+				left: 0
+				z-index: 0
+				min-height: 100%
+			h3,
+			span
+				position: absolute
+				z-index: 1
+				color: $white
+			h3
+				padding: 15px
+				bottom: 1%
+				right: 0
+			span 
+				font-size: 18px
+				font-weight: bold
+				background-color: $active
+				width: 120px
+				height: 50px
+				display: block
+				padding: 15px
+				border-radius: 25px
+				top: 10px
+				right: 10px
+				&:before 
+					position: absolute
+					top: 50%
+					left: 12px
+					transform: translate(-50%, -50%)
 
+@media screen and (min-width: 480px)
+	.catalog
+		&-items
+			display: flex
+			flex-wrap: wrap
+			.item
+				width: 50%
+
+@media screen and (min-width: 960px)
+	.catalog
+		&-items
+			display: flex
+			flex-wrap: wrap
+			.item
+				width: 33.33%
+				span 
+					width: 150px
+					height: 60px
+					font-size: 20px
+					padding: 19px
+					border-radius: 30px
+					&:before 
+						font-size: 20px
+						left: 20px
 //SECTION CATALOG NED
 //SECTION CONTACTS
-section.contacts
+.contacts
 	min-height: 100vh
 	position: relative
 	&::before
@@ -302,7 +372,52 @@ section.contacts
 		display: block
 		border-top: 1.5px solid $white
 		box-shadow: 0 0px 2px 3px $active
+	h2
+		padding: 40px 0
+	&-block
+		display: flex
+		flex-direction: column
+		max-width: 480px
+		margin: 0 auto
+		line-height: 1.5
+		input
+			background-color: transparent
+			border: 1px solid $active
+			border-radius: 20px
+			padding: 10px 10px 10px 20px
+			margin: 0 auto 20px
+			display: block
+			width: 75%
+			text-align: center
+			color: $white
+			outline: none
+		.btn
+			display: block
+			width: 75%
+			margin: 0 auto
+			padding: 15px 0px
+			border: none
+			border-radius: 20px
+			background-color: $active
+			color: $white
+			text-transform: uppercase
+			outline: none
+		h3
+			color: $white
+			padding: 35px 0 15px
+			text-align: center
+		p
+			margin-bottom: 10px
+			text-align: center
+		.socials
+			display: flex
+			justify-content: space-around
+			max-width: 360px
+			margin: 30px auto 0
+			a 
+				font-size: 30px
 //SECTION CATALOG NED
+
 
 // .line
 // 	border-top: 1.5px solid $white

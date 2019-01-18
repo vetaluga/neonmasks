@@ -21,4 +21,20 @@ $(document).ready(function(){
 	$('.lightbox-ovarlay').on('click', function(){
 		$(this).fadeOut();
 	});
+
+	//form
+	// $('').mask('(000) 000-0000');
+	$('input[name=phone]').mask('(0NN) NNN NN NN', {
+            'translation': {
+                0: {
+                    pattern: /[0]/
+                },
+                N: {
+                    pattern: /[0-9*]/
+                }
+            }
+        });
+	$('#callback').on('click', function(e){
+		e.preventDefault();
+	});
 });
