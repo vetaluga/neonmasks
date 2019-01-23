@@ -44,6 +44,25 @@ h2
 	text-align: center
 	text-shadow: 0px 0px 15px $active
 
+::-webkit-scrollbar 
+	width: 10px
+
+
+/* Track */
+::-webkit-scrollbar-track 
+	background: #f1f1f1
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb 
+	background: #888
+	border-radius: 5px
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+	background: #555
+
 @media screen and (min-width: 960px)
 	h1
 		font-size: 55px
@@ -306,6 +325,11 @@ section.info
 				content: ''
 				display: block
 				padding-top: 100%
+			p
+				overflow: hidden
+				width: 0.1px
+				height: 0.1px
+				opacity: 0
 			img 
 				position: absolute
 				top: 0
@@ -337,6 +361,181 @@ section.info
 					top: 50%
 					left: 12px
 					transform: translate(-50%, -50%)
+//SECTION CATALOG POPUP
+.item
+	&-overlay
+		position: fixed
+		top: 0
+		right: 0
+		z-index: 11
+		width: 100%
+		height: 100%
+		background-color: rgba($dark, .75)
+		display: none
+		justify-content: center
+	&-content
+		position: relative
+		width: 100%
+		height: 100vh
+		max-width: 400px
+		background-color: $white
+		color: $dark
+		overflow-y: scroll
+		*
+			color: $dark
+		.close
+			position: absolute
+			top: 20px
+			right: 20px
+			font-size: 40px
+			color: $white
+			cursor: pointer
+		.item-content-text
+			padding: 15px
+			.caption
+				font-size: 25px
+				margin-bottom: 10px
+			.descr
+			.bottom
+				display: flex
+				justify-content: space-between
+				margin-top: 15px
+				.price
+					display: flex
+					align-items: center
+					font-weight: bold
+					font-size: 18px
+				.buy
+					padding: 15px 20px
+					border: none
+					border-radius: 20px
+					background-color: $active
+					color: $white
+					text-transform: uppercase
+					position: relative
+					width: 115px
+					text-align: right
+					outline: none
+					cursor: pointer
+					&:before
+						position: absolute
+						left: 10px
+						font-size: 18px
+
+.add-product
+	// display: none
+	padding: 30px
+	background-color: $active
+	border-radius: 20px
+	text-transform: uppercase
+	color: $white
+	position: fixed
+	bottom: 20px
+	left: -100%
+	transition: 1s
+	z-index: 20
+
+.cart-overlay
+	display: none
+	background-color: rgba($dark, .75)
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 20
+	padding-top: 50px
+
+.cart-content
+	width: 100%
+	max-width: 480px
+	background-color: rgba($dark, 1)
+	padding: 25px 25px 35px
+	margin: 0 auto
+	box-shadow: 0 0 5px 5px $white
+	border-radius: 5px
+	position: relative
+	.close-popup
+		position: absolute
+		top: 2px
+		right: 7px
+		font-size: 30px
+		color: $white
+		cursor: pointer
+	.fields
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		input,
+		select
+			padding: 10px 5px
+			border: none
+			border-radius: 5px
+			margin: 0 0 10px
+			outline: none
+			&::placeholder
+				text-transform: uppercase
+		.cart-order
+			margin: 0 0 10px
+			div
+				display: flex
+				align-items: center
+		button
+			background-color: $active
+			color: $white
+			text-transform: uppercase
+			border: none
+			padding: 10px
+			border-radius: 10px
+
+
+.cart-btn
+	position: fixed
+	right: 20px
+	bottom: 50%
+	transform: translateY(-50%)
+	background-color: $active
+	font-size: 30px
+	outline: none
+	display: block
+	width: 40px
+	height: 40px
+	border: none
+	border-radius: 3px
+	color: $white
+	box-shadow: 0 0 3px 1px $dark
+	z-index: 4
+	cursor: pointer
+	animation-name: cartBtn
+	animation-duration: 2s
+	animation-iteration-count: infinite
+	animation-direction: alternate
+
+@keyframes cartBtn
+	0%
+		transform: translateY(-50%) rotate(-15deg)
+	100%
+		transform: translateY(-50%) rotate(15deg)
+
+.cart-order
+	display: flex
+	justify-content: space-between
+	color: $white
+	border: 1px solid $active
+	border-radius: 5px
+	padding: 0 10px 0 0
+	align-items: center
+	img
+		width: 50px
+		height: 50px
+		border-radius: 5px
+	.close
+		font-size: 20px
+		width: 30px
+		height: 30px
+		justify-content: center
+		cursor: pointer
+
 
 @media screen and (min-width: 480px)
 	.catalog
@@ -364,6 +563,10 @@ section.info
 						left: 20px
 //SECTION CATALOG NED
 //SECTION CONTACTS
+.request-has-been-sent
+	font-size: 30px
+	text-align: center
+	color: $white
 .contacts
 	min-height: 100vh
 	position: relative
@@ -417,6 +620,7 @@ section.info
 			a 
 				font-size: 30px
 //SECTION CATALOG NED
+
 
 
 // .line

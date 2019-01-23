@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Неоновые маски</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/icons.css">
 </head>
@@ -16,13 +17,14 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="#">Корзина</a></li>
-					<li><a href="#">Каталог</a></li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="#" data-section="cart">Корзина</a></li>
+					<li><a href="#" data-section="catalog">Каталог</a></li>
+					<li><a href="#" data-section="contacts">Контакты</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
+	<button class="cart-btn icon-cart-arrow-down"></button>
 	<section class="top">
 		<h1>Молодежные необычные неоновые маски</h1>
 	</section>
@@ -44,49 +46,55 @@
 		</div>
 	</section>
 	<div class="line"></div>
-	<section class="catalog">
+	<section class="catalog" id="catalog">
 		<h2>Каталог</h2>
 		<div class="catalog-items">
 			<div class="item">
 				<img src="images/1.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" blue</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet repellendus neque soluta qui necessitatibus, voluptate possimus ipsa, vitae cumque tempora rerum quia laboriosam, impedit perferendis aperiam dignissimos. Adipisci, praesentium.</p>
 			</div>
 			<div class="item">
 				<img src="images/2.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" red</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla tempora quam officiis quae laboriosam, repudiandae voluptatem laborum ab magnam sed, vero nisi nemo officia perspiciatis in maiores est voluptatum architecto.</p>
 			</div>
 			<div class="item">
 				<img src="images/3.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" brown</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam excepturi officia, iure dignissimos? Magnam suscipit sit quae laudantium incidunt aut quibusdam officia doloribus saepe, dolorum vel eius fugiat totam quisquam.</p>
 			</div>
 			<div class="item">
 				<img src="images/11.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" pink</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga facilis repellat veritatis deleniti debitis dolor dolorum amet? Labore nulla distinctio aliquid quod repellat, eaque doloribus, magni, praesentium similique officiis natus?</p>
 			</div>
 			<div class="item">
 				<img src="images/6.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" yellow</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus labore voluptas deleniti blanditiis similique, a minima veritatis ipsam doloribus amet explicabo dolore autem in velit, dolor possimus sequi odit tenetur!</p>
 			</div>
 			<div class="item">
 				<img src="images/10.jpg" alt="mask">
 				<h3 class="caption">Маска "Судная ночь" white</h3>
-				<span class="icon-cart-arrow-down">1000 грн</span>
+				<span class="icon-cart-arrow-down price">1000 грн</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate enim ut, dolore commodi reprehenderit maxime. Fugit velit, quos est illum qui necessitatibus, molestias maiores eius minus incidunt excepturi, doloremque? Explicabo!</p>
 			</div>
 		</div>
 	</section>
-	<section class="contacts">
+	<section class="contacts" id="contacts">
 		<div class="container">
 			<h2>Контакты</h2>
 			<div class="contacts-block">
-				<form method="post">
+				<form id="callback" method="post" action="telegram.php">
 					<input type="text" name="fname" placeholder="Имя">
 					<input type="text" name="phone" placeholder="Телефон">
-					<button id="callback" class="btn">Заказать звонок</button>
+					<button id="callback1" class="btn">Заказать звонок</button>
 				</form>
 				<div class="contacts-block-text">
 					<h3>Свяжитесь с нами</h3>
@@ -110,6 +118,73 @@
 		<div class="lightbox-content">
 			<span class="close">&times;</span>
 			<img src="images/1.jpg" alt="lightbox">
+		</div>
+	</div>
+	<div class="item-overlay">
+		<div class="item-content">
+			<span class="close">&times;</span>
+			<img src="images/1.jpg" alt="item image">
+			<div class="item-content-text">
+				<p class="caption"></p>
+				<p class="descr"></p>
+				<div class="bottom">
+					<div class="price"></div>
+					<button class="buy icon-cart-plus">купить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="add-product">
+		Товар добавлен в корзину
+	</div>
+	<div class="cart-overlay">
+		<div class="cart-content">
+			<div class="close-popup">&times;</div>
+			<form action="order.php" id="cart">
+				<div class="fields">
+					<input type="text" name="name" placeholder="имя">
+					<input type="text" name="phone" placeholder="телефон">
+					<select name="delivery" id="delivery">
+						<option value="0">Новая почта</option>
+						<option value="1">Курьерская доставка</option>
+					</select>
+					<input type="text" name="adress"  placeholder="адрес">
+<!-- 					<div class="cart-order">
+						
+					</div> -->
+					<div class="cart-order">
+						<img src="images/1.jpg" alt="image">
+						<div class="name-item">
+							Маска "Судная ночь" red
+						</div>
+						<div class="price" name="price">1000 грн</div>
+						<input type="hidden" name="itemname" value="Маска 'Судная ночь' yellow33">
+						<input type="hidden" name="price" value="1000 грн">
+						<div class="close">&times;</div>
+					</div>
+					<div class="cart-order">
+						<img src="images/1.jpg" alt="image">
+						<div class="name-item">
+							Маска "Судная ночь" blue
+						</div>
+						<div class="price" name="price">1000 грн</div>
+						<input type="hidden" name="itemname" value="Маска 'Судная ночь' yellow33">
+						<input type="hidden" name="price" value="1000 грн">
+						<div class="close">&times;</div>
+					</div>
+					<div class="cart-order">
+						<img src="images/1.jpg" alt="image">
+						<div class="name-item">
+							Маска "Судная ночь" yellow
+						</div>
+						<div class="price" name="price">1000 грн</div>
+						<input type="hidden" name="itemname" value="Маска 'Судная ночь' yellow33">
+						<input type="hidden" name="price" value="1000 грн">
+						<div class="close">&times;</div>
+					</div>
+					<button>Заказать</button>
+				</div>
+			</form>
 		</div>
 	</div>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
